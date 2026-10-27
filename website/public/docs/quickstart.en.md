@@ -1,4 +1,4 @@
-﻿# Quick start
+# Quick start
 
 This section describes multiple ways to install or start using QwenPaw:
 
@@ -12,12 +12,12 @@ This section describes multiple ways to install or start using QwenPaw:
 | **ModelScope Studio**   | No local environment or quick trial           | One-click deploy, cloud running, no installation                                                | ModelScope account                      |
 | **Desktop app**         | Users unfamiliar with command line            | Double-click to use, graphical interface                                                        | None                                    |
 
-> 馃摉 Please read [Introduction](./intro) first. After installation and startup, check out [Console](./console).
+> 📖 Please read [Introduction](./intro) first. After installation and startup, check out [Console](./console).
 
-> 馃挕 **Key steps after installation and startup**:
+> 💡 **Key steps after installation and startup**:
 >
 > 1. Access [Console](./console) in your browser (`http://127.0.0.1:8088/`)
-> 2. **Configure models** (required): Settings 鈫?Models 鈫?Configure API Key or download local models
+> 2. **Configure models** (required): Settings → Models → Configure API Key or download local models
 > 3. Start chatting to test
 > 4. (Optional) Configure channels to chat in DingTalk, Feishu, QQ, etc. See [Channels](./channels)
 
@@ -70,7 +70,7 @@ first and then configure channels.
 
 ## Option 2: Script install
 
-No Python required 鈥?the installer handles everything automatically using [uv](https://docs.astral.sh/uv/).
+No Python required — the installer handles everything automatically using [uv](https://docs.astral.sh/uv/).
 
 ### Step 1: Install
 
@@ -96,7 +96,7 @@ irm https://qwenpaw.agentscope.io/install.ps1 | iex
 
 Then open a new terminal (the installer adds QwenPaw to your PATH automatically).
 
-> **鈿狅笍 Special Notice for Windows Enterprise LTSC Users**
+> **⚠️ Special Notice for Windows Enterprise LTSC Users**
 >
 > If you are using Windows LTSC or an enterprise environment governed by strict security policies, PowerShell may run in **Constrained Language Mode**, potentially causing the following issues:
 >
@@ -110,7 +110,7 @@ Then open a new terminal (the installer adds QwenPaw to your PATH automatically)
 >      - QwenPaw path: Typically `%USERPROFILE%\.qwenpaw\bin`.
 >    - **Manually add to the system's Path environment variable**:
 >      - Press `Win + R`, type `sysdm.cpl` and press Enter to open System Properties.
->      - Click "Advanced" 鈫?"Environment Variables".
+>      - Click "Advanced" → "Environment Variables".
 >      - Under "System variables", locate and select `Path`, then click "Edit".
 >      - Click "New", enter both directory paths sequentially, then click OK to save.
 >
@@ -243,9 +243,9 @@ or running commands.
 
 ### Features
 
-- 鉁?**Zero configuration**: Download and double-click to run, no need to install Python or configure environment variables
-- 鉁?**Cross-platform**: Supports Windows 10+ and macOS 14+ (Apple Silicon recommended)
-- 鉁?**Visual interface**: Automatically opens the app window, no need to manually enter addresses
+- ✅ **Zero configuration**: Download and double-click to run, no need to install Python or configure environment variables
+- ✅ **Cross-platform**: Supports Windows 10+ and macOS 14+ (Apple Silicon recommended)
+- ✅ **Visual interface**: Automatically opens the app window, no need to manually enter addresses
 
 ### Download and usage
 
@@ -298,13 +298,13 @@ Use the same `session_id` for multi-turn conversations.
 
 ### Required steps
 
-#### 鉁?1. Configure models (required)
+#### ✅ 1. Configure models (required)
 
 QwenPaw needs a large language model to work. You can choose either option:
 
 **Option A: Use cloud models (requires API Key)**
 
-1. In the Console, go to **Settings 鈫?Models**
+1. In the Console, go to **Settings → Models**
 2. Select a provider (such as DashScope, ModelScope, etc.)
 3. Click the **Settings** button and enter your **API Key**
 4. Click **Save**
@@ -330,7 +330,7 @@ See [Models - Configure cloud providers](./models).
 
 After configuring the local model, you can select it in the Console's **Default LLM** settings or in the **Chat** page.
 
-#### 馃幆 2. Test chat in Console
+#### 🎯 2. Test chat in Console
 
 After model configuration is complete, send a message in the Console's **Chat**
 page to test functionality and confirm QwenPaw can reply normally.
@@ -341,16 +341,16 @@ page to test functionality and confirm QwenPaw can reply normally.
 
 After configuring models and testing successfully, you can extend as needed:
 
-#### 馃摫 Connect messaging channels
+#### 📱 Connect messaging channels
 
 Chat with QwenPaw in DingTalk, Feishu, QQ, Discord, iMessage, and other apps:
 
-1. In the Console, go to **Control 鈫?Channels**
+1. In the Console, go to **Control → Channels**
 2. Select the channel to connect
 3. Follow the [Channels](./channels) documentation to obtain credentials and fill them in
 4. After saving, you can send messages to QwenPaw in the corresponding app
 
-#### 馃搳 Enable Langfuse tracing
+#### 📊 Enable Langfuse tracing
 
 Langfuse tracing is optional. If you do not use Langfuse, no extra package or
 configuration is required. To enable it, install the Langfuse SDK and provide
@@ -383,38 +383,38 @@ docker run -p 127.0.0.1:8088:8088 \
   qwenpaw-langfuse:latest
 ```
 
-#### 馃敡 Enable and extend skills
+#### 🔧 Enable and extend skills
 
 Give QwenPaw more capabilities (PDF processing, Office documents, news summaries, etc.):
 
-- In the Console, go to **Agent 鈫?Skill Pool** or **Agent 鈫?Skills**
+- In the Console, go to **Agent → Skill Pool** or **Agent → Skills**
 - Import built-in skills, import from Skill Hub, or create custom skills
 - See [Skills](./skills)
 
-#### 馃攲 Connect MCP tools
+#### 🔌 Connect MCP tools
 
 Extend external tool capabilities through MCP (Model Context Protocol):
 
-- In the Console, go to **Agent 鈫?MCP**
+- In the Console, go to **Agent → MCP**
 - Create MCP client and connect to external tool servers
 - See [MCP](./mcp)
 
-#### 鈴?Set up scheduled tasks and heartbeat
+#### ⏰ Set up scheduled tasks and heartbeat
 
 Let QwenPaw execute tasks automatically:
 
-- **Scheduled tasks**: Create in Console **Control 鈫?Scheduled tasks**, or use `qwenpaw cron` command in [CLI](./cli)
+- **Scheduled tasks**: Create in Console **Control → Scheduled tasks**, or use `qwenpaw cron` command in [CLI](./cli)
 - **Heartbeat**: Configure scheduled check-ins or digests, see [Heartbeat](./heartbeat)
 
-#### 馃懃 Create multi-agent
+#### 👥 Create multi-agent
 
 Create multiple specialized assistants, each with their own role or collaborating:
 
-- Create new agents in Console **Settings 鈫?Agent Management**
+- Create new agents in Console **Settings → Agent Management**
 - Each agent has independent configuration, memory, skills, and conversation history
 - Enable collaboration skills to let agents communicate with each other
 - See [Multi-Agent](./multi-agent)
 
-#### 馃搨 Adjust working directory
+#### 📂 Adjust working directory
 
 To change the location of configuration files or working directory, see [Config & working directory](./config).
